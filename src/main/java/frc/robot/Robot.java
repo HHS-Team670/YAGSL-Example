@@ -88,7 +88,7 @@ public class Robot extends TimedRobot
   {
     if (disabledTimer.hasElapsed(Constants.Drivebase.WHEEL_LOCK_TIME))
     {
-      m_robotContainer.setMotorBrake(false);
+      m_robotContainer.setMotorBrake(true);
       disabledTimer.stop();
     }
   }
@@ -124,10 +124,10 @@ public class Robot extends TimedRobot
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    if (m_autonomousCommand != null)
-    {
-      m_autonomousCommand.cancel();
-    }
+    // if (m_autonomousCommand != null)
+    // {
+    //   m_autonomousCommand.cancel();
+    // }
     m_robotContainer.setDriveMode();
     m_robotContainer.setMotorBrake(true);
   }

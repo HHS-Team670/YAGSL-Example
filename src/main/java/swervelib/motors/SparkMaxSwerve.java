@@ -251,6 +251,7 @@ public class SparkMaxSwerve extends SwerveMotor
   @Override
   public void setMotorBrake(boolean isBrakeMode)
   {
+    // System.out.println("spark max swerve brake mode called");
     motor.setIdleMode(isBrakeMode ? IdleMode.kBrake : IdleMode.kCoast);
   }
 
