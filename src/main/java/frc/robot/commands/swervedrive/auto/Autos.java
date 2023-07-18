@@ -51,21 +51,8 @@ public final class Autos
   {
     boolean               onTheFly = false; // Use the path defined in code or loaded from PathPlanner.
     PathPlannerTrajectory example;
-    if (onTheFly)
-    {
-      // Simple path with holonomic rotation. Stationary start/end. Max velocity of 4 m/s and max accel of 3 m/s^2
-      example = PathPlanner.generatePath(
-          new PathConstraints(4, 3),
-          new PathPoint(new Translation2d(0, 0), Rotation2d.fromDegrees(0), Rotation2d.fromDegrees(0)),
-// position, heading(direction of travel), holonomic rotation
-          new PathPoint(new Translation2d(3, 5), Rotation2d.fromDegrees(90), Rotation2d.fromDegrees(90)),
-// position, heading(direction of travel), holonomic rotation
-          new PathPoint(new Translation2d(5, 5), Rotation2d.fromDegrees(0), Rotation2d.fromDegrees(0))
-          // position, heading(direction of travel), holonomic rotation
-                                        );
-    } else
-    {
-      List<PathPlannerTrajectory> example1 = PathPlanner.loadPathGroup("SamplePath", new PathConstraints(4, 3));
+    
+      List<PathPlannerTrajectory> example1 = PathPlanner.loadPathGroup("Straight", new PathConstraints(1, 1));
       // This is just an example event map. It would be better to have a constant, global event map
       // in your code that will be used by all path following commands.
       HashMap<String, Command> eventMap = new HashMap<>();
@@ -91,11 +78,9 @@ public final class Autos
 // The drive subsystem. Used to properly set the requirements of path following commands
       );
       return Commands.sequence(autoBuilder.fullAuto(example1));
-    }
 //    swerve.postTrajectory(example);
-    return Commands.sequence(new FollowTrajectory(swerve, example, true));
+   // return Commands.sequence(new FollowTrajectory(swerve, example, true));
   }
-
   /**
    * Create a {@link FollowTrajectory} command to go to the April Tag from the current position.
    *
