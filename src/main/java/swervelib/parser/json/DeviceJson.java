@@ -107,29 +107,29 @@ public class DeviceJson
   {
     switch (type)
     {
-      // case "sparkmax_brushed":
-      //   switch (canbus)
-      //   {
-      //     case "greyhill_63r256":
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 1024, false);
-      //     case "srx_mag_encoder":
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 4096, false);
-      //     case "throughbore":
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 8192, false);
-      //     case "throughbore_dataport":
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kNoSensor, 8192, true);
-      //     case "greyhill_63r256_dataport":
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 1024, true);
-      //     case "srx_mag_encoder_dataport":
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 4096, true);
-      //     default:
-      //       if (isDriveMotor)
-      //       {
-      //         throw new RuntimeException("Spark MAX " + id + " MUST have a encoder attached to the motor controller.");
-      //       }
-      //       // We are creating a motor for an angle motor which will use the absolute encoder attached to the data port.
-      //       return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kNoSensor, 0, false);
-      //   }
+      case "sparkmax_brushed":
+        switch (canbus)
+        {
+          case "greyhill_63r256":
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 1024, false);
+          case "srx_mag_encoder":
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 4096, false);
+          case "throughbore":
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 8192, false);
+          case "throughbore_dataport":
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kNoSensor, 8192, true);
+          case "greyhill_63r256_dataport":
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 1024, true);
+          case "srx_mag_encoder_dataport":
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kQuadrature, 4096, true);
+          default:
+            if (isDriveMotor)
+            {
+              throw new RuntimeException("Spark MAX " + id + " MUST have a encoder attached to the motor controller.");
+            }
+            // We are creating a motor for an angle motor which will use the absolute encoder attached to the data port.
+            return new SparkMaxBrushedMotorSwerve(id, isDriveMotor, Type.kNoSensor, 0, false);
+      }
       case "neo":
       case "sparkmax":
         return new SparkMaxSwerve(id, isDriveMotor);

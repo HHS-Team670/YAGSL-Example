@@ -1,0 +1,26 @@
+{
+  "NetworkTables": {
+    "Transitory Values": {
+      "open": false
+    },
+    "transitory": {
+      "LiveWindow": {
+        ".status": {
+          "open": true
+        }
+      },
+      "SmartDashboard": {
+        "open": true
+      }
+    },
+    "types": {
+      "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Field": "Field2d",
+      "/SmartDashboard/navX-Sensor[1]": "Gyro"
+    }
+  },
+  "NetworkTables Settings": {
+    "mode": "Client (NT4)",
+    "serverTeam": "670"
+  }
+}

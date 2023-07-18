@@ -47,7 +47,7 @@ public class Robot extends TimedRobot
   {
     PathPlannerServer.startServer(5811);
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
-    // autonomous chooser on the dashboard.
+    // autonomous chooser xon the dashboard.
     m_robotContainer = new RobotContainer();
 
     // Create a timer to disable motor brake a few seconds after disable.  This will let the robot stop
@@ -124,10 +124,10 @@ public class Robot extends TimedRobot
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
-    // if (m_autonomousCommand != null)
-    // {
-    //   m_autonomousCommand.cancel();
-    // }
+    if (m_autonomousCommand != null)
+    {
+      m_autonomousCommand.cancel();
+    }
     m_robotContainer.setDriveMode();
     m_robotContainer.setMotorBrake(true);
   }
