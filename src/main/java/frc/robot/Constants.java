@@ -28,8 +28,8 @@ public final class Constants
   {
 
     public static final PIDFConfig xAutoPID     = new PIDFConfig(2, 0, 0);
-    public static final PIDFConfig yAutoPID     = new PIDFConfig(2, 0, 0);
-    public static final PIDFConfig angleAutoPID = new PIDFConfig(0.1, 0, 0.01);
+    public static final PIDFConfig yAutoPID     = new PIDFConfig(1.75, 0, 0);
+    public static final PIDFConfig angleAutoPID = new PIDFConfig(0.8, 0, 0);
 
     public static final double MAX_SPEED        = 2;
     public static final double MAX_ACCELERATION = 1;

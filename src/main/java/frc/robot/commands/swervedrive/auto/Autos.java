@@ -52,7 +52,7 @@ public final class Autos
     boolean               onTheFly = false; // Use the path defined in code or loaded from PathPlanner.
     PathPlannerTrajectory example;
     
-      List<PathPlannerTrajectory> example1 = PathPlanner.loadPathGroup("Straight", new PathConstraints(1, 1));
+      List<PathPlannerTrajectory> example1 = PathPlanner.loadPathGroup("Straight180", new PathConstraints(1, 1));
       // This is just an example event map. It would be better to have a constant, global event map
       // in your code that will be used by all path following commands.
       HashMap<String, Command> eventMap = new HashMap<>();
