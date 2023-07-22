@@ -54,6 +54,7 @@ public class SwerveSubsystem extends SubsystemBase
     try
     {
       swerveDrive = new SwerveParser(directory).createSwerveDrive();
+      swerveDrive.enableSecondOrderKinematics(0.33);
     } catch (Exception e)
     {
       throw new RuntimeException(e);
@@ -69,6 +70,7 @@ public class SwerveSubsystem extends SubsystemBase
   public SwerveSubsystem(SwerveDriveConfiguration driveCfg, SwerveControllerConfiguration controllerCfg)
   {
     swerveDrive = new SwerveDrive(driveCfg, controllerCfg);
+    swerveDrive.enableSecondOrderKinematics(0.33);
   }
 
   /**

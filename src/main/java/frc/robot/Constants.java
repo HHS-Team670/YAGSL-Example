@@ -27,8 +27,8 @@ public final class Constants
   public static final class Auton
   {
 
-    public static final PIDFConfig xAutoPID     = new PIDFConfig(1.5, 0, 0);
-    public static final PIDFConfig yAutoPID     = new PIDFConfig(1.5, 0, 0);
+    public static final PIDFConfig xAutoPID     = new PIDFConfig(5, 0, 0);//increase p
+    public static final PIDFConfig yAutoPID     = new PIDFConfig(5, 0, 0);//increase p
     public static final PIDFConfig angleAutoPID = new PIDFConfig(1.5, 0, 0);
 
     public static final double MAX_SPEED        = 2;
