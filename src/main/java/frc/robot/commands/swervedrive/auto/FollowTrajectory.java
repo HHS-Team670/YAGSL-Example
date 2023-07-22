@@ -2,6 +2,8 @@ package frc.robot.commands.swervedrive.auto;
 
 import com.pathplanner.lib.PathPlannerTrajectory;
 import com.pathplanner.lib.commands.PPSwerveControllerCommand;
+
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import frc.robot.Constants.Auton;
 import frc.robot.subsystems.swervedrive.SwerveSubsystem;
@@ -29,4 +31,6 @@ public class FollowTrajectory extends SequentialCommandGroup
             drivebase)
                );
   }
+
+  
 }
