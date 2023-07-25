@@ -15,6 +15,7 @@ import edu.wpi.first.math.geometry.Translation2d;
 import edu.wpi.first.math.kinematics.ChassisSpeeds;
 import edu.wpi.first.math.trajectory.Trajectory;
 import edu.wpi.first.wpilibj.Timer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import java.io.File;
@@ -54,12 +55,12 @@ public class SwerveSubsystem extends SubsystemBase
     try
     {
       swerveDrive = new SwerveParser(directory).createSwerveDrive();
-      swerveDrive.enableSecondOrderKinematics(0.33);
+
     } catch (Exception e)
     {
       throw new RuntimeException(e);
     }
-  }
+  }  
 
   /**
    * Construct the swerve drive.
@@ -68,9 +69,8 @@ public class SwerveSubsystem extends SubsystemBase
    * @param controllerCfg Swerve Controller.
    */
   public SwerveSubsystem(SwerveDriveConfiguration driveCfg, SwerveControllerConfiguration controllerCfg)
-  {
+  { 
     swerveDrive = new SwerveDrive(driveCfg, controllerCfg);
-    swerveDrive.enableSecondOrderKinematics(0.33);
   }
 
   /**
@@ -215,6 +215,12 @@ public class SwerveSubsystem extends SubsystemBase
     yInput = Math.pow(yInput, 3);
     return swerveDrive.swerveController.getTargetSpeeds(xInput, yInput, angle.getRadians(), getHeading().getRadians());
   }
+
+  public void enableSecondOrderKinematics(double moduleFeedforward)
+  {
+    swerveDrive.enableSecondOrderKinematics(moduleFeedforward);
+  }
+
 
   /**
    * Gets the current field-relative velocity (x, y and omega) of the robot

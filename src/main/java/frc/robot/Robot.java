@@ -101,6 +101,7 @@ public class Robot extends TimedRobot
   {
     m_robotContainer.setMotorBrake(true);
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+    m_robotContainer.getDrivebase().enableSecondOrderKinematics(.7);
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null)
@@ -124,6 +125,8 @@ public class Robot extends TimedRobot
     // teleop starts running. If you want the autonomous to
     // continue until interrupted by another command, remove
     // this line or comment it out.
+    m_robotContainer.getDrivebase().enableSecondOrderKinematics(0.0);
+
     if (m_autonomousCommand != null)
     {
       m_autonomousCommand.cancel();
